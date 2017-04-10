@@ -33,7 +33,8 @@ motor2.setSpeed(255);
 
 motor3.setSpeed(180);
   
-motor4.setSpeed(180)
+motor4.setSpeed(180);
+
 }
 
 
@@ -41,47 +42,63 @@ void loop() {
   
 // 9 inches
 Serial.print("run");
-motor.run(FORWARD);      // turn it on going forward
-motor2.run(FORWARD);  // motor 2 - same
-delay(1000);
+motor.run(FORWARD);     
+motor2.run(FORWARD);  
+delay(1000);  //
 
 // 90 degrees down
 // arm motors
 Serial.print("lower");
-motor3.run(FORWARD);     // 
-motor4.run(FORWARD);  // 
-delay(1000);
+motor3.run(FORWARD);   
+motor4.run(FORWARD); 
+delay(1000);  //
 
 // 24 inches
+// drive across
 Serial.print("run");
 motor.run(FORWARD);
+motor2.run(FORWARD);
+delay(1000);  //
+}
+
+// 90 degrees up
+// arm motors
+// picks up at back of the robot chassis
+Serial.print("raise at back");
+motor.run(REVERSE);
+motor2.run(REVERSE);
+delay(1000);  //
+}
+
+// 180 degrees (drive motors)
+Serial.print("180");
+motor3.run(FORWARD);
+motor4.run(REVERSE); 
+delay(1000);  //
+}
+
+// 30 inches
+Serial.print("run");
+motor.run(FORWARD); 
 motor2.run(FORWARD);
 delay(1000);
 }
 
 // 
-Serial.print("raise");
-motor.run(REVERSE);
-motor2.run(REVERSE);
-delay(1000);
-}
-
-// 180 degrees (drive motors)
-Serial.print("180");
-motor3.run(FORWARD); 
-motor4.run(REVERSE); 
-delay(1000);
-}
-
-// 10 inches
 Serial.print("lower");
 motor.run(FORWARD);  
-motor2.run(REVERSE); 
-delay(1000);
+motor2.run(FORWARD); 
+delay(1000);  //
 }
 
 //
 Serial.print("run");
+motor.run(FORWARD); 
+motor2.run(FORWARD); 
+delay(1000);
+}
+
+Serial.print("stop");
 motor.run(RELEASE); 
 motor2.run(RELEASE);
 delay(1000);
